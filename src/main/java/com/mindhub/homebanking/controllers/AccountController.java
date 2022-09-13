@@ -108,6 +108,10 @@ public class AccountController {
 
         Account account = accountRepository.findByNumber(numberAccount);
 
+        if(account.getBalance() > 0){
+            return new ResponseEntity<>("No puedes eliminar una cuenta si tiene fondos activos", HttpStatus.FORBIDDEN);
+        }
+
         account.setActive(false);
         account.getTransaction().forEach(transaction -> transaction.setActive(false));
         Set<Card> cardNumber = account.getCards().stream().filter(Card::isActive).collect(Collectors.toSet());
