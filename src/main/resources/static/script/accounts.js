@@ -15,7 +15,9 @@ var app2 = new Vue({
         form: {
             email: "",
         },
-        cards:[]
+        cards:[],
+        numberDestiny: "",
+        numberOrigin: ""
 
     },
 
@@ -236,7 +238,30 @@ var app2 = new Vue({
                       })
                 })
                 .catch(error => {
-                    console.log(error);
+                    Swal.fire({
+                        icon: 'warning',
+                        title: error.response.data,
+                        showDenyButton: true,
+                        showCancelButton: true,
+                        confirmButtonText: 'Transferir dinero y eliminar cuenta',
+                        denyButtonText: `Cancelar`,
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire({
+                                title: 'Ingresa cuenta de destino',
+                                input:"text",
+                                showCancelButton: true,
+                                confirmButtonText: 'transferir y eliminar',
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    this.numberOrigin = account
+                                    console.log(this.numberOrigin);
+                                    this.transfer(result.value)
+                                    
+                                }
+                            })
+                        }
+                    })
                 })
                   
                 } else if (result.isDenied) {
@@ -245,6 +270,31 @@ var app2 = new Vue({
               })
 
 
+        },
+        transfer(numberDestiny){
+            axios.patch("/api/account/money","numberDestiny=" + numberDestiny +"&numberOrigin=" + this.numberOrigin.number)
+            .then(response => { 
+                axios.patch("/api/account","numberAccount=" + this.numberOrigin.number)
+                .then(res => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Cuenta eliminada exitosamente',
+                        confirmButtonText: 'Ok',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                location.reload()
+                            }
+                        }).catch(error =>{
+                            console.log(error);  
+                        })
+                })
+            }).catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: error.response.data,
+                    })
+            })
         }
     },
 })

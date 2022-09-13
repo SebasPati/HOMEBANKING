@@ -20,6 +20,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static com.mindhub.homebanking.models.TransactionType.CREDITO;
+import static com.mindhub.homebanking.models.TransactionType.DEBITO;
+
 @RestController
 @RequestMapping("/api")
 public class AccountController {
@@ -108,7 +111,7 @@ public class AccountController {
 
         Account account = accountRepository.findByNumber(numberAccount);
 
-        if(account.getBalance() > 0){
+        if(account.getBalance() > 1){
             return new ResponseEntity<>("No puedes eliminar una cuenta si tiene fondos activos", HttpStatus.FORBIDDEN);
         }
 
@@ -122,6 +125,29 @@ public class AccountController {
         cardNumber.forEach(card -> cardRepository.save(card));
 
         return new ResponseEntity<>("Cuenta eliminada exitosamente", HttpStatus.ACCEPTED);
+    }
+    @PatchMapping("/account/money")
+    public ResponseEntity<Object> transfer(@RequestParam String numberDestiny, @RequestParam String numberOrigin) {
+
+        Account accountDestiny = accountRepository.findByNumber(numberDestiny);
+        Account accountOrigin = accountRepository.findByNumber(numberOrigin);
+
+        if(!accountRepository.findAll().contains(accountDestiny)){
+            return new ResponseEntity<>("La cuenta de destino no existe", HttpStatus.FORBIDDEN);
+        }
+
+        accountDestiny.setBalance(accountOrigin.getBalance()+accountDestiny.getBalance());
+
+        Transaction transaction =new Transaction(CREDITO,accountOrigin.getBalance(),accountOrigin.getNumber()+" deposito", LocalDateTime.now(),accountDestiny,accountDestiny.getBalance(),true);
+
+        accountOrigin.setBalance(0);
+        transactionRepository.save(transaction);
+
+
+        accountRepository.save(accountDestiny);
+        accountRepository.save(accountOrigin);
+
+        return new ResponseEntity<>("Dinero transferido exitosamente", HttpStatus.ACCEPTED);
     }
 
 }
