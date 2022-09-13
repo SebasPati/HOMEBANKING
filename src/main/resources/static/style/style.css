@@ -1,0 +1,371 @@
+#flecha1 {
+    width: 0; 
+    height: 0; 
+    border-right: 10px solid rgba(0, 0, 0, 0.753);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+    margin-top: 10px;
+    
+}
+#flecha{
+    width: 80%;
+    margin-top: 2px;
+}
+.table>:not(:first-child) {
+    border-top: 0px solid currentColor !important;
+}
+
+
+html{
+    overflow-x: hidden;
+}
+
+  footer {
+    background-color: #121315;
+    color: #a7a7a7;
+    font-size: 16px;
+  }
+  footer * {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+  }
+  .row {
+    padding: 1em 1em;
+  }
+  .row.primary {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    align-items: stretch;
+  }
+  .column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+    min-height: 15em;
+  }
+  h3 {
+    width: 100%;
+    text-align: left;
+    color: white;
+    font-size: 1.4em;
+    white-space: nowrap;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  li:not(:first-child) {
+    margin-top: 0.8em;
+  }
+  ul li a {
+    color: #a7a7a7;
+    text-decoration: none;
+  }
+  ul li a:hover {
+    color: yellow;
+  }
+  .about p {
+    text-align: justify;
+    line-height: 2;
+    margin: 0;
+  }
+  input,
+  button {
+    font-size: 1em;
+    padding: 1em;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  button {
+    background-color: yellow;
+    color: #ffffff;
+  }
+  div.social {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2.4em;
+    flex-direction: row;
+    margin-top: 0.5em;
+  }
+  .social a {
+    color: #bac6d9;
+  }
+  .social a:hover{
+    color: yellow;
+  }
+  .copyright {
+    padding: 0.3em 1em;
+    background-color: #25262e;
+  }
+  .footer-menu{
+    float: left;
+      margin-top: 10px;
+  }
+  
+  .footer-menu a{
+    color: #cfd2d6;
+    padding: 6px;
+  
+    text-decoration: none;
+  }
+  .footer-menu a:hover{
+    color: yellow;
+  }
+  .copyright p {
+    font-size: 0.9em;
+    text-align: right;
+  }
+  @media screen and (max-width: 850px) {
+    .row.primary {
+      grid-template-columns: 1fr;
+    }
+  
+  }
+.cabeza{
+    
+    padding: 0px !important;
+}
+
+.cabeza a:hover{
+    color: yellow !important;
+}
+
+.act a:hover{
+    color: rgb(255, 166, 0)  !important;
+}
+ tbody a:hover{
+    color: rgb(255, 166, 0) !important;
+ }
+ .barra a:hover{
+    color: yellow !important;
+ }
+ thead a:hover{
+    color: rgb(255, 166, 0) !important;
+ }
+ td a:hover{
+    color: rgb(255, 166, 0) !important;
+ }
+
+ .cuentas{
+  color: yellow !important;
+ }
+ .tooltipleft{
+  position: relative;
+  display: inline-block;
+  
+  }
+  .tooltipleft .toolttextleft {
+  visibility: hidden;
+  width: 200px;
+  height:50px;
+  background-color:rgba(83, 79, 77, 0.726);
+  color: black;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px ;
+  position: absolute;
+  z-index: 1;
+  left: 130%;
+  }
+  .tooltipleft:hover .toolttextleft {
+  visibility: visible;
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i');
+
+
+
+
+.title {
+    margin-bottom: 30px;
+    color: #162969;
+}
+
+
+.card{
+width: 320px;
+height: 190px;
+  
+  
+}
+
+.card__part{
+  box-shadow: 1px 1px #aaa3a3;
+    top: 0;
+  position: absolute;
+z-index: 1000;
+  left: 0;
+  display: inline-block;
+    width: 320px;
+    height: 190px;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+   
+    
+}
+
+.card__front{
+  padding: 18px;
+
+}
+
+.card__back {
+  padding: 18px 0;
+
+}
+
+.card__black-line {
+    margin-top: 5px;
+    height: 38px;
+    background-color: #303030;
+}
+
+.card__logo {
+    height: 16px;
+}
+
+.card__front-logo{
+      position: absolute;
+    top: 18px;
+    right: 18px;
+}
+.card__square {
+    border-radius: 5px;
+    height: 30px;
+}
+
+.card_numer {
+    display: block;
+    width: 100%;
+    word-spacing: 4px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.card__space-75 {
+    width: 75%;
+    float: left;
+}
+
+.card__space-25 {
+    width: 25%;
+    float: left;
+}
+
+.card__label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 1px;
+}
+
+.card__info {
+    margin-bottom: 0;
+    margin-top: 5px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card__back-content {
+    padding: 15px 15px 0;
+}
+.card__secret--last {
+    color: #303030;
+    text-align: right;
+    margin: 0;
+    font-size: 14px;
+}
+
+.card__secret {
+    padding: 5px 12px;
+    background-color: #fff;
+    position:relative;
+}
+
+.card__secret:before{
+  content:'';
+  position: absolute;
+top: -3px;
+left: -3px;
+height: calc(100% + 6px);
+width: calc(100% - 42px);
+border-radius: 4px;
+  background: repeating-linear-gradient(45deg, #ededed, #ededed 5px, #f9f9f9 5px, #f9f9f9 10px);
+}
+
+.card__back-logo {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.card__back-square {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+#eliminar input[type=radio] {
+  display: none;
+  
+}
+
+#eliminar label{
+  display: inline-block;
+  margin: 4px;
+  padding: 8px;
+  background: #000000d8;
+  color: white;
+  width: calc(50% - 8px);
+  min-width: 100px;
+  cursor: pointer;
+}
+
+#eliminar label:hover {
+  background: #000000e5;
+}
+
+#eliminar input[type=radio]:checked + label {
+  background: #000000;
+  color: #FAFAFA;
+}
+@media(max-width:500px) {
+  .tabla td{
+    padding: 0;
+  }
+}
+@media(max-width:400px) {
+  .tabla{
+    font-size: 0.8rem;
+  }
+  .tabla button{
+    font-size: 0.8rem;
+  }
+}
+@media (max-width:600px) {
+  #flecha{
+    height: 60px !important;
+  }
+}
+@media (max-width:1300px) {
+  #flecha1{
+    margin-left: 25px;
+  }
+}
