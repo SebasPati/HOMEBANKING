@@ -106,8 +106,8 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav barra">
           <a class="nav-link ms-3 text-white" href="#">Inicio</a>
-          <a class="nav-link ms-3 text-white" href="http://localhost:8080/accounts.html">Cuentas</a>
-          <a class="nav-link ms-3 text-white" href="http://localhost:8080/cards.html">Tarjetas</a>
+          <a class="nav-link ms-3 text-white" href="/accounts.html">Cuentas</a>
+          <a class="nav-link ms-3 text-white" href="/cards.html">Tarjetas</a>
           <a class="nav-link ms-3 text-white" href="#">Prestamos</a>
         </div>
       </div>
@@ -155,7 +155,7 @@
               <div class="collapse" id="collapseExample" v-for="cuenta in accounts"
                 v-if="cuenta.number != account.number">
                 <div class=" card-body">
-                  <a :href="'http://localhost:8080/account.html?id='+cuenta.id"
+                  <a :href="'/account.html?id='+cuenta.id"
                     style="text-decoration: none;color: grey;">{{cuenta.number}}</a>
                 </div>
               </div>

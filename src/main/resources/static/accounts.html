@@ -98,7 +98,7 @@
             <div class="navbar-nav barra">
               <a class="nav-link ms-3 text-white" href="#">Inicio</a>
               <a class="nav-link ms-3 text-white cuentas disabled" href="#">Cuentas</a>
-              <a class="nav-link ms-3 text-white" href="http://localhost:8080/cards.html">Tarjetas</a>
+              <a class="nav-link ms-3 text-white" href="/cards.html">Tarjetas</a>
               <a class="nav-link ms-3 text-white" href="#">Prestamos</a>
             </div>
           </div>
@@ -193,7 +193,7 @@
               <tfoot>
                 <tr>
                   <td v-if="transactions.length > 0" colspan="3"><a
-                      :href="'http://localhost:8080/account.html?id='+account.id"
+                      :href="'/account.html?id='+account.id"
                       style="text-decoration: none; color: black;"> → Ver mas movimientos</a></td>
                   <td v-if="transactions.length == 0" colspan="3">
                     <p>no ha relizado ninguna transaccion</p>
@@ -330,7 +330,7 @@
             <tr id="collapseExample3" class="collapse" v-for="card in cards">
               <td>{{card.cardType}}</td>
               <td style="text-align:center;">**** **** **** {{card.number.substr(15.17)}}</td>
-              <td style="text-align:center;"><a :href="'http://localhost:8080/cards.html?id='+card.id"
+              <td style="text-align:center;"><a :href="'/cards.html?id='+card.id"
                   style="color:black;">Ver mas</a></td>
             </tr>
             </tbody>
