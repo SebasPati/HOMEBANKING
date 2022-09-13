@@ -108,7 +108,7 @@
             <a class="nav-link ms-3 text-white" href="#">Inicio</a>
             <a class="nav-link ms-3 text-white" href="/accounts.html">Cuentas</a>
             <a class="nav-link ms-3 text-white" href="/cards.html">Tarjetas</a>
-            <a class="nav-link ms-3 text-white" href="#">Prestamos</a>
+            <a class="nav-link ms-3 text-white" href="/loans.html">Prestamos</a>
           </div>
         </div>
       </div>
@@ -182,9 +182,10 @@
                   <h4>Selecciona el cupo</h4>
                   <div class="input-group input-group-icon">
                     <select class="mb-2" name="select" v-model="accountNumber">
-                      <option>2000</option>
-                      <option>4000</option>
-                      <option>6000</option>
+                      <option>{{currency(5000)}}</option>
+                      <option>{{currency(10000)}}</option>
+                      <option>{{currency(15000)}}</option>
+                      <option>{{currency(20000)}}</option>
                     </select>
                     <div class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
                         fill="currentColor" class="ms-3 bi bi-list-task" viewBox="0 0 16 16">
@@ -198,7 +199,7 @@
                   </div>
                   <div class="row ">
                     <h4>Color:</h4>
-                    <div class="d-flex justify-content-start">
+                    <div class="d-flex justify-content-start inputs">
                       <div id="gold">
                         <input id="card-gold" class="gold" type="radio" name="color" value="GOLD" v-model="cardColor" />
                         <label for="card-gold">Gold</label>
@@ -217,8 +218,8 @@
                   </div>
                   <div class="row">
                     <div class="input-group">
-                      <button @click="newCreditCard()" class="saldo"
-                        style="background-color: rgba(59, 53, 53, 0.514);">Crear Tarjeta</button>
+                      <button @click="newCreditCard()" class="saldo" style="background-color: rgba(59, 53, 53, 0.514);">Crear
+                        Tarjeta</button>
                     </div>
                   </div>
                 </div>
